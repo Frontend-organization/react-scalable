@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "jsx": "react",
+    "esModuleInterop": true,
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+  },
+  "files": ["./Global.d.ts"],
+  "include": ["src"]
+}
