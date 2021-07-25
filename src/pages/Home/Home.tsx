@@ -2,7 +2,6 @@ import React from "react"
 
 import Taza from "../../assets/avatar.jpg"
 
-//FIXME: fix types for css-modules
 import styles from "./Home.module.css"
 
 const Home = () => {
