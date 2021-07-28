@@ -1,9 +1,8 @@
-import React from "react"
-import ReactDOM from "react-dom"
+import '@libs/main.css'
+import ReactDOM from 'react-dom'
 
-import "./libs/normalize.css"
-import App from "./App"
+import App from './App'
 
-const root = document.querySelector("#root")
+const root = document.querySelector('#root')
 
 ReactDOM.render(<App />, root)

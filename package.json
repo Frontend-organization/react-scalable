@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "NODE_ENV=production webpack",
-    "serve": "NODE_ENV=development webpack serve"
+    "dev": "NODE_ENV=development webpack serve"
   },
   "keywords": [],
   "author": "Frontend Organization",
@@ -16,10 +16,18 @@
   "devDependencies": {
     "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
+    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "@typescript-eslint/parser": "^4.28.5",
+    "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^6.2.0",
     "eslint": "^7.31.0",
     "eslint-plugin-react": "^7.24.0",
     "html-webpack-plugin": "^5.3.2",
+    "image-minimizer-webpack-plugin": "^2.2.0",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^9.0.0",
     "mini-css-extract-plugin": "^2.1.0",
     "prettier": "^2.3.2",
     "ts-loader": "^9.2.3",
@@ -31,7 +39,9 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@hot-loader/react-dom": "^17.0.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-hot-loader": "^4.13.0"
   }
 }
