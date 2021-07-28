@@ -1,9 +1,0 @@
-{
-  "rules": {
-    "comma-dangle": "warn",
-    "no-trailing-spaces": "warn",
-    "semi": "error",
-    "react/jsx-uses-react": "off"
-  },
-  "extends": ["eslint:recommended", "plugin:react/recommended"]
-}

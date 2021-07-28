@@ -1,4 +1,3 @@
-//FIXME: const is reserved keyword
 const { merge } = require('webpack-merge')
 const defaultConfig = require('./config/webpack.default.config')
 const devConfig = require('./config/webpack.dev.config')
