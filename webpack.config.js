@@ -1,11 +1,11 @@
-//FIXME: const is reserved keyword
 const { merge } = require('webpack-merge')
 const defaultConfig = require('./config/webpack.default.config')
+const productionConfig = require('./config/webpack.production.config')
 const devConfig = require('./config/webpack.dev.config')
 
 /** @type {import('webpack').Configuration} */
 module.exports = (env = 'production') => {
   const isProd = env === 'production'
-  if (isProd) return merge(defaultConfig, { mode: 'production' })
+  if (isProd) return merge(defaultConfig, productionConfig, { mode: 'production' })
   return merge(defaultConfig, devConfig, { mode: 'development' })
 }

@@ -1,9 +1,8 @@
-import React from "react"
+import { hot } from 'react-hot-loader/root'
+import Home from './pages/Home'
 
-import Home from "./pages/Home"
-
-const App = () => {
+const App: React.FC = () => {
   return <Home />
 }
 
-export default App
+export default hot(App)

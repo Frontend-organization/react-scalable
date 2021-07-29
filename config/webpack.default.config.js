@@ -1,7 +1,9 @@
 const path = require("path")
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const { ProgressPlugin } = require("webpack")
+const { ProgressPlugin, DefinePlugin } = require("webpack")
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
@@ -9,11 +11,19 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "../build"),
     filename: "[contenthash].js",
-    assetModuleFilename: "assets/[hash][ext]",
+    assetModuleFilename: "public/assets/[hash][ext]",
     clean: true,
   },
   resolve: {
     extensions: [".ts", ".js", ".tsx"],
+    alias: {
+      '@services': path.resolve(__dirname, '../src/services'),
+      '@components': path.resolve(__dirname, '../src/components'),
+      '@hooks': path.resolve(__dirname, '../src/hooks'),
+      '@assets': path.resolve(__dirname, '../src/assets'),
+      '@context': path.resolve(__dirname, '../src/context'),
+      '@libs': path.resolve(__dirname, '../src/libs'),
+    }
   },
   module: {
     rules: [
@@ -28,16 +38,42 @@ module.exports = {
           },
         ],
       },
-      { test: /\.(png|jpg|gif|mp3|mp4|jpeg|svg)$/i, type: "asset" },
+      { 
+        test: /\.(png|jpg|gif|mp3|mp4|jpeg|svg)$/i,
+        type: "asset",
+        parser: {
+          dataUrlCondition: {
+            maxSize: 4 * 1024, //4kb
+          }
+        }
+      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "../public/index.html"),
-      favicon: path.join(__dirname, "../public/assets/hammer.ico"),
+      favicon: path.join(__dirname, "../public/favicon.ico"),
     }),
     new MiniCssExtractPlugin(),
     new ProgressPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        { 
+          from: path.join(__dirname, '../public/assets'),
+          to: path.join(__dirname, '../build/public')
+        }
+      ]
+    }),
+    new ImageMinimizerPlugin({
+      minimizerOptions: {
+        plugins: [
+          ['gifsicle', { optimizationLevel: 5 }],
+          ['optipng', { optimizationLevel: 5 }],
+          ['jpegtran', { optimizationLevel: 5 }],
+          ['svgo', { optimizationLevel: 5 }]
+        ]
+      }
+    }),
   ],
   experiments: {
     asset: true,

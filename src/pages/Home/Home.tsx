@@ -1,13 +1,13 @@
-//TODO: add react 17 jsx transform config
-import React from 'react'
+import avatar from '@assets/avatar.jpg'
 
-import Taza from '../../assets/avatar.jpg'
 import styles from './Home.module.css'
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <section className={styles.container}>
+      <img src={avatar} alt="initial-build" />
       <h2>Hello from Home.tsx</h2>
+      <p>Lets code!</p>
     </section>
   )
 }
