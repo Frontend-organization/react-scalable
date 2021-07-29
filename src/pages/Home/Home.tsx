@@ -7,7 +7,7 @@ const Home: React.FC = () => {
     <section className={styles.container}>
       <img src={avatar} alt="initial-build" />
       <h2>Hello from Home.tsx</h2>
-      <p>Lets Code!</p>
+      <p>Lets code!</p>
     </section>
   )
 }
