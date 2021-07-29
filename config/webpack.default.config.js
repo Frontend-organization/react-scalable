@@ -3,7 +3,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const { ProgressPlugin } = require("webpack")
+const { ProgressPlugin, DefinePlugin } = require("webpack")
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
@@ -73,7 +73,7 @@ module.exports = {
           ['svgo', { optimizationLevel: 5 }]
         ]
       }
-    })
+    }),
   ],
   experiments: {
     asset: true,
