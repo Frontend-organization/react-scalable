@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "NODE_ENV=production webpack",
-    "dev": "NODE_ENV=development webpack serve"
+    "dev": "NODE_ENV=development webpack serve",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:w": "jest --watch"
   },
   "keywords": [],
   "author": "Frontend Organization",
@@ -14,6 +17,9 @@
   },
   "license": "ISC",
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@types/jest": "^26.0.24",
     "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
     "@typescript-eslint/eslint-plugin": "^4.28.5",
@@ -23,13 +29,16 @@
     "eslint": "^7.31.0",
     "eslint-plugin-react": "^7.24.0",
     "html-webpack-plugin": "^5.3.2",
+    "identity-obj-proxy": "^3.0.0",
     "image-minimizer-webpack-plugin": "^2.2.0",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^9.0.0",
+    "jest": "^27.0.6",
     "mini-css-extract-plugin": "^2.1.0",
     "prettier": "^2.3.2",
+    "ts-jest": "^27.0.4",
     "ts-loader": "^9.2.3",
     "typescript": "^4.3.5",
     "typescript-plugin-css-modules": "^3.4.0",
