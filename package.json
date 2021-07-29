@@ -8,7 +8,8 @@
     "dev": "NODE_ENV=development webpack serve",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "test:w": "jest --watch"
+    "test:w": "jest --watch",
+    "test:e2e": "cypress run"
   },
   "keywords": [],
   "author": "Frontend Organization",
@@ -27,6 +28,7 @@
     "@typescript-eslint/parser": "^4.28.5",
     "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^6.2.0",
+    "cypress": "^8.0.0",
     "dotenv-webpack": "^7.0.3",
     "eslint": "^7.31.0",
     "eslint-plugin-react": "^7.24.0",
