@@ -6,6 +6,6 @@ const devConfig = require('./config/webpack.dev.config')
 /** @type {import('webpack').Configuration} */
 module.exports = (env = 'production') => {
   const isProd = env === 'production'
-  if (isProd) return merge(defaultConfig, productionConfig, { mode: 'production' })
-  return merge(defaultConfig, devConfig, { mode: 'development' })
+  if (isProd) return merge(defaultConfig(env), productionConfig, { mode: 'production' })
+  return merge(defaultConfig(env), devConfig, { mode: 'development' })
 }
