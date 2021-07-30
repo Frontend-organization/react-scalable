@@ -4,7 +4,7 @@ const path = require('path');
 /** @type {import('webpack').Configuration} */
 module.exports = {
   entry: ["react-hot-loader/patch", "./src/index"],
-  devtool: "source-map",
+  devtool: "eval-source-map",
   devServer: {
     port: process.env.PORT || 8080,
     contentBase: path.join(__dirname, 'build'),
