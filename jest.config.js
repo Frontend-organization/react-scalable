@@ -76,12 +76,12 @@ module.exports = {
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/__mocks__/fileMock.js',
     '\\.(css|less)$': 'identity-obj-proxy',
-    '@services': '/src/services',
-    '@components': '/src/components',
-    '@hooks': '/src/hooks',
-    '@assets': '/src/assets',
-    '@context': '/src/context',
-    '@libs': '/src/libs'
+    '^@services(.*)$': '<rootDir>/src/services$1',
+    '^@components(.*)$': '<rootDir>/src/components$1',
+    '^@context(.*)$': '<rootDir>/src/context$1',
+    '^@hooks(.*)$': '<rootDir>/src/hooks$1',
+    '^@assets(.*)$': '<rootDir>/src/assets$1',
+    '^@libs(.*)$': '<rootDir>/src/libs$1'
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
